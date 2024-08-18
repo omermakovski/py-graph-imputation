@@ -58,5 +58,5 @@ def run_original_grim(path_configuration,app_pop_pair=True,Producehpf=False,domi
         file.close()
 
 if __name__ == "__main__":
-    conf_file="../conf/minimal-configuration.json"
+    conf_file= "conf/minimal-configuration.json"
     run_original_grim(conf_file, True, True,True)
