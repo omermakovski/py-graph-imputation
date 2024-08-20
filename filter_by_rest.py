@@ -47,7 +47,7 @@ def filter_results(res_haps, extra_gl):
     res_haps["Probs"] = [res_haps["Probs"][idx] for idx in filter_idx]
     res_haps["Pops"] = [res_haps["Pops"][idx] for idx in filter_idx]
     if not res_haps["Probs"]:
-        return {"Haps": [], "Pops": []}, {"Haps": [], "Probs": [], "Pops": []}
+        return {"Haps": [], "Probs": [], "Pops": []}
 
     return res_haps
 
