@@ -54,7 +54,7 @@ def graph_freqs(conf_file="", for_em=False, em_pop=None):
     )
 
 
-def impute(conf_file="",app_pop_pair = False):
+def impute(conf_file="",hap_pop_pair = False):
 
     project_dir_in_file, project_dir_graph = "", ""
     if conf_file == "":
@@ -70,7 +70,7 @@ def impute(conf_file="",app_pop_pair = False):
         project_dir_in_file = (
             os.path.dirname(os.path.realpath(__file__)).replace("/grim", "") + "/"
         )
-    run_impute(conf_file, project_dir_graph, project_dir_in_file,app_pop_pair)
+    run_impute(conf_file, project_dir_graph, project_dir_in_file,hap_pop_pair)
 
 
 def impute_instance(config, graph, count_by_prob=None):

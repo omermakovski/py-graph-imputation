@@ -19,7 +19,7 @@ def run_impute(
     conf_file="../conf/minimal-configuration.json",
     project_dir_graph="",
     project_dir_in_file="",
-    app_pop_pair = False
+    hap_pop_pair = False
 ):
 
     configuration_file = conf_file
@@ -172,7 +172,7 @@ def run_impute(
     pathlib.Path(output_dir).mkdir(parents=False, exist_ok=True)
 
     # Write out the results from imputation
-    imputation.impute_file(config,em_mr=app_pop_pair)
+    imputation.impute_file(config,em_mr=hap_pop_pair)
 
     # Profiler end
     # pr.disable()

@@ -15,7 +15,7 @@ def remove_empty_rows(file_path):
 
     df_cleaned.to_csv(file_path, index=False)
 
-def run_original_grim(path_configuration,app_pop_pair=True,Producehpf=False,dominant3=True):
+def run_original_grim(path_configuration,hap_pop_pair=True,Producehpf=False,dominant3=True):
     with open(path_configuration,'r') as f:
         config = json.load(f)
 
@@ -39,7 +39,7 @@ def run_original_grim(path_configuration,app_pop_pair=True,Producehpf=False,domi
         gls , lines = change_donor_file(path_donor) #change so wont change donor file
 
     #imputation
-    impute(conf_file=path_configuration,app_pop_pair= app_pop_pair)
+    impute(conf_file=path_configuration,hap_pop_pair= hap_pop_pair)
 
     #change the output and filter by the extra_gl
     if dominant3:
@@ -49,7 +49,7 @@ def run_original_grim(path_configuration,app_pop_pair=True,Producehpf=False,domi
         path_pmug_pops = os.path.join(config["imputation_out_path"], config["imputation_out_hap_pops_filename"])
         path_miss = os.path.join(config["imputation_out_path"], config["imputation_out_miss_filename"])
 
-        change_output_by_extra_gl(gls,path_pmug,path_umug,path_umug_pops,path_pmug_pops,path_miss) #filter reasults in our origianl file, add miss to existing miss
+        change_output_by_extra_gl(config,gls,path_pmug,path_umug,path_umug_pops,path_pmug_pops,path_miss) #filter reasults in our origianl file, add miss to existing miss
 
         # changing to original donor file
         with open(path_donor, "w") as file:

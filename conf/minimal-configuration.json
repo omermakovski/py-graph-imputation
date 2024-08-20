@@ -2,7 +2,7 @@
   "populations": [
     "CAU"
   ],
-  "freq_trim_threshold": 1e-5,
+  "freq_trim_threshold": 0.1,
  "priority": {
    "alpha": 0.4999999,
     "eta": 0,
